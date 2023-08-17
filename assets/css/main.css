@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Unbounded";
+  src: url(/fonts/Unbounded-Bold.woff2) format("woff2");
+  font-weight: 700;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Unbounded";
+  src: url(/fonts/Unbounded-Medium.woff2) format("woff2");
+  font-weight: 500;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Unbounded";
+  src: url(/fonts/MontserratAlt1-Regular.woff) format("woff");
+  font-weight: 400;
+  font-display: block;
+}
