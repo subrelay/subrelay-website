@@ -1,9 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ["~/assets/css/main.css"],
+  css: ['~/assets/css/main.css'],
 
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ['@nuxtjs/tailwindcss'],
 
   postcss: {
     plugins: {
@@ -13,8 +13,8 @@ export default defineNuxtConfig({
   },
 
   tailwindcss: {
-    cssPath: "~/assets/css/tailwind.css",
-    configPath: "~~/tailwind.config",
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: '~~/tailwind.config',
     exposeConfig: false,
     exposeLevel: 2,
     config: {},

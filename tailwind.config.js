@@ -16,8 +16,18 @@ module.exports = {
     './error.{js,ts,vue}',
     './app.config.{js,ts}',
   ],
+
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        unbounded: ['Unbounded', 'sans-serif'],
+      },
+    },
+
+    fontFamily: {
+      sans: ['Assistant', 'sans-serif'],
+    },
   },
+
   plugins: [require('@tailwindcss/aspect-ratio')],
 };

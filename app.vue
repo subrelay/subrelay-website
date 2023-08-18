@@ -1,9 +1,10 @@
 <template>
   <header class="bg-white">
-    <nav class="mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <!-- NAV BAR -->
+    <nav class="mx-auto flex items-center justify-between p-6 max-w-[1370px]" aria-label="Global">
       <div class="flex">
-        <a href="/" class="logo -m-1.5 p-1.5 text-3xl font-bold">
-          <span>SubRelay</span>
+        <a href="/" class="-m-1.5 p-1.5 text-xl text-bold">
+          <span class="font-unbounded mr-1 p-2">Subrelay</span>
         </a>
       </div>
 
@@ -15,13 +16,11 @@
       </div>
 
       <div class="flex">
-        <div class="mr-2 border rounded-lg px-4 py-2 border-solid border-zinc-700 cursor-pointer hover:opacity-80">
-          Login
+        <div class="mr-4 border rounded-lg px-4 py-2 border-solid border-zinc-700 cursor-pointer hover:opacity-80">
+          Log in
         </div>
 
-        <div
-          class="mr-2 border rounded-lg px-4 py-2 border-solid bg-black text-gray-50 cursor-pointer hover:opacity-80"
-        >
+        <div class="mr-2 rounded-lg px-4 py-2 border-solid bg-black text-gray-50 cursor-pointer hover:opacity-80">
           Sign up
         </div>
       </div>
@@ -107,6 +106,28 @@
       </Dialog>
     </client-only>
   </header>
+
+  <HomePageHero></HomePageHero>
+
+  <div class="max-w-[1370px] mx-auto pt-24 pb-8 px-10 text-center text-xl text-neutral-400">
+    Rated 4.5 out of 600+ reviews on G2.com and trusted by
+  </div>
+
+  <div class="pb-24 grid grid-cols-[repeat(12,64px)] gap-y-0 gap-x-8 justify-center grid-test">
+    <div class="flex col-start-2 col-end-12 flex-wrap justify-between gap-y-6">
+      <div v-for="(partner, index) in partners" :key="index" :class="`col-start-${index + 2}`">
+        <img :src="`/partners/${partner}-logo.svg`" alt="parner-logo" class="h-9 w-auto" />
+      </div>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-[1370px] text-center pt-24 px-10">
+    <h2 class="text-[64px]">Refreshingly different, <br />by design</h2>
+  </div>
+
+  <ForThem></ForThem>
+
+  <ForYou></ForYou>
 </template>
 
 <script setup>
@@ -174,11 +195,11 @@ const mobileMenuOpen = ref(false);
 
 const showMenu = ref(false);
 const navOptions = ref(['Products', 'Template', 'Integrations', 'Resources', 'Pricing', 'Enterprices', 'Support']);
+const partners = ref(['airbnb', 'mailchimp', 'hermes', 'hubspot', 'barrys']);
 </script>
 
 <style>
-.logo {
-  font-family: 'Unbounded';
-  user-select: none;
+.grid-test {
+  grid-area: 2 / 1 / 3 / -1;
 }
 </style>
