@@ -1,121 +1,14 @@
 <template>
-  <header class="bg-white">
-    <!-- NAV BAR -->
-    <nav class="mx-auto flex items-center justify-between p-6 max-w-[1370px]" aria-label="Global">
-      <div class="flex">
-        <a href="/" class="-m-1.5 p-1.5 text-xl text-bold">
-          <span class="font-unbounded mr-1 p-2">Subrelay</span>
-        </a>
-      </div>
-
-      <div class="flex">
-        <div v-for="(options, index) in navOptions" :key="index" class="flex items-center m-2 cursor-pointer">
-          <span>{{ options }} </span>
-          <ChevronDownIcon class="h-4 w-4 ml-2" />
-        </div>
-      </div>
-
-      <div class="flex">
-        <div class="mr-4 border rounded-lg px-4 py-2 border-solid border-zinc-700 cursor-pointer hover:opacity-80">
-          Log in
-        </div>
-
-        <div class="mr-2 rounded-lg px-4 py-2 border-solid bg-black text-gray-50 cursor-pointer hover:opacity-80">
-          Sign up
-        </div>
-      </div>
-
-      <!-- Mobile toggle button -->
-      <div class="flex lg:hidden">
-        <button
-          type="button"
-          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-          @click="mobileMenuOpen = true"
-        >
-          <span class="sr-only">Open main menu</span>
-          <Bars3Icon class="h-6 w-6" aria-hidden="false" />
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile -->
-    <client-only>
-      <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
-        <div class="fixed inset-0 z-10" />
-        <DialogPanel
-          class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
-        >
-          <div class="flex items-center justify-between">
-            <a href="#" class="-m-1.5 p-1.5">
-              <span class="sr-only">Your Company</span>
-              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-            </a>
-            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
-              <span class="sr-only">Close menu</span>
-              <XMarkIcon class="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div class="mt-6 flow-root">
-            <div class="-my-6 divide-y divide-gray-500/10">
-              <div class="space-y-2 py-6">
-                <Disclosure as="div" class="-mx-3" v-slot="{ open }">
-                  <DisclosureButton
-                    class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    Product
-                    <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
-                  </DisclosureButton>
-                  <DisclosurePanel class="mt-2 space-y-2">
-                    <DisclosureButton
-                      v-for="item in [...products, ...callsToAction]"
-                      :key="item.name"
-                      as="a"
-                      :href="item.href"
-                      class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      >{{ item.name }}</DisclosureButton
-                    >
-                  </DisclosurePanel>
-                </Disclosure>
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >Features</a
-                >
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >Marketplace</a
-                >
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Company
-                </a>
-              </div>
-              <div class="py-6">
-                <a
-                  href="#"
-                  class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >Log in</a
-                >
-              </div>
-            </div>
-          </div>
-        </DialogPanel>
-      </Dialog>
-    </client-only>
-  </header>
-
+  <MegaMenu />
   <HomePageHero></HomePageHero>
 
   <div class="max-w-[1370px] mx-auto pt-24 pb-8 px-10 text-center text-xl text-neutral-400">
     Rated 4.5 out of 600+ reviews on G2.com and trusted by
   </div>
 
-  <div class="pb-24 grid grid-cols-[repeat(12,64px)] gap-y-0 gap-x-8 justify-center grid-test">
+  <div class="pb-24 grid grid-cols-[repeat(12,64px)] gap-y-0 gap-x-8 justify-center">
     <div class="flex col-start-2 col-end-12 flex-wrap justify-between gap-y-6">
-      <div v-for="(partner, index) in partners" :key="index" :class="`col-start-${index + 2}`">
+      <div v-for="(partner, index) in partners" :key="index">
         <img :src="`/partners/${partner}-logo.svg`" alt="parner-logo" class="h-9 w-auto" />
       </div>
     </div>
@@ -125,9 +18,11 @@
     <h2 class="text-[64px]">Refreshingly different, <br />by design</h2>
   </div>
 
-  <ForThem></ForThem>
+  <ForThem />
 
-  <ForYou></ForYou>
+  <ForYou />
+
+  <IntegrationsSection />
 </template>
 
 <script setup>
@@ -154,52 +49,7 @@ import {
 
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid';
 
-const products = [
-  {
-    name: 'Analytics',
-    description: 'Get a better understanding of your traffic',
-    href: '#',
-    icon: ChartPieIcon,
-  },
-  {
-    name: 'Engagement',
-    description: 'Speak directly to your customers',
-    href: '#',
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: 'Security',
-    description: 'Your customers’ data will be safe and secure',
-    href: '#',
-    icon: FingerPrintIcon,
-  },
-  {
-    name: 'Integrations',
-    description: 'Connect with third-party tools',
-    href: '#',
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: 'Automations',
-    description: 'Build strategic funnels that will convert',
-    href: '#',
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
-  { name: 'Contact sales', href: '#', icon: PhoneIcon },
-];
-
-const mobileMenuOpen = ref(false);
-
-const showMenu = ref(false);
-const navOptions = ref(['Products', 'Template', 'Integrations', 'Resources', 'Pricing', 'Enterprices', 'Support']);
 const partners = ref(['airbnb', 'mailchimp', 'hermes', 'hubspot', 'barrys']);
 </script>
 
-<style>
-.grid-test {
-  grid-area: 2 / 1 / 3 / -1;
-}
-</style>
+<style></style>
