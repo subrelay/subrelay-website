@@ -10,9 +10,9 @@
         <li
           v-for="(integration, index) in integrations"
           :key="index"
-          class="w-64 h-64 flex items-center justify-center bg-[#F9F9F7] rounded-[52px]"
+          class="w-64 h-64 p-8 flex items-center justify-center bg-[#F9F9F7] rounded-[52px]"
         >
-          <img alt="" :src="`/integrations/${integration}-logo.svg`" />
+          <img alt="" :src="`/integrations/${integration}-logo.svg`" class="w-full h-auto" />
         </li>
       </ul>
     </div>

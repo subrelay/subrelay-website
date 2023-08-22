@@ -33,3 +33,31 @@
   border-style: solid;
   border-color: #e5e7eb;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 112px;
+  }
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  color: rgb(38, 38, 39);
+  font-family:
+    apercu-pro,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Helvetica Neue',
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0px;
+  min-height: 100%;
+  padding: 0px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
