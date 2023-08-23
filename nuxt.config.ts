@@ -27,4 +27,10 @@ export default defineNuxtConfig({
     injectPosition: 'first',
     viewer: true,
   },
+
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag === 'iconify-icon',
+    },
+  },
 });

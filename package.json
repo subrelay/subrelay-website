@@ -23,6 +23,7 @@
     "@headlessui/vue": "^1.7.15",
     "@heroicons/vue": "^2.0.18",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "iconify-icon": "^1.0.8",
     "install": "^0.13.0"
   }
 }

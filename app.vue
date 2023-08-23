@@ -26,9 +26,10 @@
 
   <div class="mx-auto max-w-[1370px] text-center pt-24 px-20 flex flex-col gap-4">
     <h2 class="text-[64px]">Do it all with a form</h2>
-
     <p class="leading-[133%] text-2xl font-normal">Whatever your goal, start with a ready-made template.</p>
   </div>
+
+  <ProfilesSection />
 </template>
 
 <script setup>
