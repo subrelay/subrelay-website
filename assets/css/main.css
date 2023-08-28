@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url(/fonts/Unbounded-Bold.woff2) format('woff2');
+  font-weight: 700;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url(/fonts/Unbounded-Medium.woff2) format('woff2');
+  font-weight: 500;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Unbounded';
+  src: url(/fonts/Unbounded-Regular.woff2) format('woff');
+  font-weight: 400;
+  font-display: block;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 112px;
+  }
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+  color: rgb(38, 38, 39);
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0px;
+  min-height: 100%;
+  padding: 0px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
