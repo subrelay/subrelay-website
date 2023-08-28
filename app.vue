@@ -30,6 +30,10 @@
   </div>
 
   <ProfilesSection />
+
+  <ClosingSection />
+
+  <FooterSection />
 </template>
 
 <script setup>
