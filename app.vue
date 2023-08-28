@@ -36,30 +36,16 @@
   <FooterSection />
 </template>
 
-<script setup>
-import {
-  Dialog,
-  DialogPanel,
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
-} from '@headlessui/vue';
-import {
-  ArrowPathIcon,
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from '@heroicons/vue/24/outline';
-
-import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid';
-
+<script setup lang="ts">
+useHead({
+  title: 'SubRelay',
+  link: [
+    {
+      rel: 'icon',
+      href: '/subrelay-logo.png',
+    },
+  ],
+});
 const partners = ref(['airbnb', 'mailchimp', 'hermes', 'hubspot', 'barrys']);
 </script>
 
