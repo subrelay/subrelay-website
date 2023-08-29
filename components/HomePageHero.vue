@@ -3,7 +3,7 @@
   <section class="pt-[88px]">
     <div class="px-20 py-16 grid grid-cols-12 gap-8 max-w-[1370px] mx-auto">
       <div class="col-span-7 flex items-center justify-center">
-        <img src="placeholder.png" alt="" class="h-4/5 w-auto" />
+        <nuxt-img src="/placeholder.png" alt="" class="h-4/5 w-auto" />
       </div>
 
       <div class="col-span-5 flex flex-col items-start justify-center">
