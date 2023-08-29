@@ -1,18 +1,9 @@
 <template>
   <MegaMenu />
-  <HomePageHero></HomePageHero>
 
-  <div class="max-w-[1370px] mx-auto pt-24 pb-8 px-10 text-center text-xl text-neutral-400">
-    Rated 4.5 out of 600+ reviews on G2.com and trusted by
-  </div>
+  <HomePageHero />
 
-  <div class="pb-24 grid grid-cols-[repeat(12,64px)] gap-y-0 gap-x-8 justify-center">
-    <div class="flex col-start-2 col-end-12 flex-wrap justify-between gap-y-6">
-      <div v-for="(partner, index) in partners" :key="index">
-        <img :src="`/partners/${partner}-logo.svg`" alt="parner-logo" class="h-9 w-auto" />
-      </div>
-    </div>
-  </div>
+  <PartnerSection />
 
   <div class="mx-auto max-w-[1370px] text-center pt-24 px-20">
     <h2 class="text-[64px]">Refreshingly different, <br />by design</h2>
@@ -23,6 +14,8 @@
   <ForYou />
 
   <IntegrationsSection />
+
+  <Web2Web3Connection />
 
   <div class="mx-auto max-w-[1370px] text-center pt-24 px-20 flex flex-col gap-4">
     <h2 class="text-[64px]">Do it all with a form</h2>

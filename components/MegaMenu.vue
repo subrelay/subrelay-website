@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-0 left-0 right-0 z-[1001]" aria-label="Global">
+  <nav class="fixed top-0 left-0 right-0 z-[1001]">
     <!-- Desktop nav -->
     <section class="h-[88px] relative">
       <!-- megamenu-top-menu -->
@@ -42,7 +42,7 @@
 
       <!-- megamenu-content-wrapper -->
       <div
-        class="absolute -top-1 bg-[#ffffffe6] transition-all duration-[600ms] ease-[cubic-bezier(0.165, 0.84, 0.44, 1)] backdrop-saturate-[180] backdrop-blur-[20px] w-full"
+        class="absolute -top-1 bg-[#ffffffe6] transition-all duration-[600ms] ease-[cubic-bezier(0.165, 0.84, 0.44, 1)] backdrop-saturate-[1.8] backdrop-blur-[20px] w-full"
         :class="{ 'pt-[89px]': scrolledPast88px, 'pt-px': !scrolledPast88px }"
       >
         <!-- <div class="min-h-[350px] px-[50px] pt-[30px] pb-[50px]">
