@@ -1,14 +1,11 @@
 <template>
   <div class="px-20 py-24 grid grid-cols-12 gap-8 max-w-[1370px] mx-auto">
     <div class="col-span-5 flex flex-col items-start justify-center">
-      <div class="text-5xl leading-none font-medium">
-        One solution <br />
-        for a multichain world.
-      </div>
+      <div class="text-5xl leading-none font-medium">Bridging the gap <br />between Web2 and Web3</div>
 
       <div class="mt-6 text-xl">
-        <span class="font-bold">Seamlessly integrate with any Substrate app chains and Ink smart contract apps, </span>
-        ensuring flexibility and comprehensive compatibility for your decentralized needs.
+        <span class="font-bold">Marry the power of decentralized and centralized web with ease. </span>
+        Connect with your favorite Web2 services and bring enhanced functionality to your blockchain projects.
       </div>
 
       <a
