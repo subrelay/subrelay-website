@@ -18,7 +18,7 @@
     </div>
 
     <div class="col-span-7 flex items-center justify-center">
-      <img src="placeholder.png" alt="" class="h-4/5 w-auto" />
+      <nuxt-img src="/placeholder.png" alt="" class="h-4/5 w-auto" />
     </div>
   </div>
 </template>

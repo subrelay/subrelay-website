@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
 
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge'],
 
   router: {
     // https://router.vuejs.org/api/interfaces/routeroptions.html
