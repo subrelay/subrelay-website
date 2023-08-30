@@ -27,7 +27,6 @@
 </template>
 
 <script setup>
-const opening = ref(null);
 const questions = ref([
   {
     title: 'How do I get started?',
@@ -81,31 +80,5 @@ const questions = ref([
   },
 ]);
 
-function randomId() {
-  return Math.random().toString(16).slice(2);
-}
-
-function toggleCollapsibleElement(isCollapsed, elementId) {
-  const element = document.getElementById(elementId);
-  const sectionHeight = element.scrollHeight;
-
-  // Get height of the content when fully expanded. Since 100% or auto doesn't work for this animation
-
-  /* The scrollHeight property returns the entire height of an element in pixels, including padding,
-  but not the border, scrollbar or margin. */
-
-  element.style.height = isCollapsed ? '2px' : `${sectionHeight}px`;
-}
-
-function setOpening(index) {
-  if (opening.value === index) {
-    opening.value = null;
-    toggleCollapsibleElement(true, `faq-${index}`);
-  } else {
-    if (opening.value !== null) toggleCollapsibleElement(true, `faq-${opening.value}`);
-
-    opening.value = index;
-    toggleCollapsibleElement(false, `faq-${index}`);
-  }
-}
+const { setOpening, opening } = useSetOpening();
 </script>
