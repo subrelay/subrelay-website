@@ -5,20 +5,20 @@
 
       <div
         class="border-t-2 py-4 cursor-pointer last:border-b-2"
-        v-for="({ title, answer }, index) in questions"
+        v-for="({ title, answer }, index) in faqs"
         :key="index"
-        @click="setOpening(index)"
+        @click="setOpening(`faq-${index}`)"
       >
         <div class="text-2xl flex justify-between items-center">
           <span> {{ title }}</span>
           <iconify-icon
             icon="ph:plus-bold"
             class="align-sub transition duration-200 ease-in-out"
-            :class="{ 'rotate-45': opening === index }"
+            :class="{ 'rotate-45': openedItemId === index }"
           />
         </div>
 
-        <div :id="`faq-${index}`" class="h-0.5 overflow-hidden transition-[height] duration-300 ease-in-out">
+        <div :id="`faq-${index}`" class="h-0 overflow-hidden transition-[height] duration-300 ease-in-out">
           <div class="py-6 w-4/5">{{ answer }}</div>
         </div>
       </div>
@@ -27,7 +27,7 @@
 </template>
 
 <script setup>
-const questions = ref([
+const faqs = ref([
   {
     title: 'How do I get started?',
     answer:
@@ -80,5 +80,5 @@ const questions = ref([
   },
 ]);
 
-const { setOpening, opening } = useSetOpening();
+const { setOpening, openedItemId } = useSetOpening();
 </script>

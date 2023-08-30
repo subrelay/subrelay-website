@@ -11,25 +11,28 @@
 
           <div
             class="leading-6 cursor-pointer"
-            @click="setOpeningMenu(child)"
             v-for="(child, childIndex) in item.childrens"
             :key="childIndex"
-            :class="{ 'mb-4': openingMenu === child.title }"
+            :class="{ 'mb-4': openedItemId === `footer-${index}-${childIndex}` }"
           >
-            <section v-if="child.childrens" class="flex flex-col overflow-y-hidden">
+            <section
+              v-if="child.childrens"
+              class="flex flex-col overflow-y-hidden"
+              @click="setOpening(`footer-${index}-${childIndex}`)"
+            >
               <div class="mb-4 transition-opacity duration-200 ease-in">
                 <span v-html="child.title"> </span>
 
                 <iconify-icon
                   icon="pajamas:chevron-down"
-                  class="ml-1 align-sub"
-                  :class="{ 'rotate-180': openingMenu === child.title }"
+                  class="ml-1 align-sub transition duration-300 ease-in-out"
+                  :class="{ 'rotate-180': openedItemId === `footer-${index}-${childIndex}` }"
                 />
               </div>
 
               <div
-                class="overflow-hidden transition-[max-height] duration-200 ease-in"
-                v-show="openingMenu === child.title"
+                :id="`footer-${index}-${childIndex}`"
+                class="h-0 overflow-hidden transition-[height] duration-300 ease-in-out"
               >
                 <section class="pl-4">
                   <div
@@ -220,4 +223,6 @@ function setOpeningMenu(child: any) {
     openingMenu.value = child.title;
   }
 }
+
+const { setOpening, openedItemId } = useSetOpening();
 </script>

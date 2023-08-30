@@ -4,7 +4,7 @@ export function useToggleCollapsible() {
     if (!element) return;
 
     const sectionHeight = element.scrollHeight;
-    element.style.height = isCollapsed ? '2px' : `${sectionHeight}px`;
+    element.style.height = isCollapsed ? '0px' : `${sectionHeight}px`;
   }
 
   return {
