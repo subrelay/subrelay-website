@@ -20,19 +20,22 @@
               class="flex flex-col overflow-y-hidden"
               @click="setOpening(`footer-${index}-${childIndex}`)"
             >
-              <div class="mb-4 transition-opacity duration-200 ease-in">
+              <div
+                class="mb-4 transition-opacity duration-200 ease-in hover:opacity-80"
+                :class="{ 'opacity-80': openedItemId === `footer-${index}-${childIndex}` }"
+              >
                 <span v-html="child.title"> </span>
 
                 <iconify-icon
                   icon="pajamas:chevron-down"
-                  class="ml-1 align-sub transition duration-300 ease-in-out"
+                  class="ml-1 align-sub transition duration-200 ease-in-out"
                   :class="{ 'rotate-180': openedItemId === `footer-${index}-${childIndex}` }"
                 />
               </div>
 
               <div
                 :id="`footer-${index}-${childIndex}`"
-                class="h-0 overflow-hidden transition-[height] duration-300 ease-in-out"
+                class="h-0 overflow-hidden transition-[height] duration-200 ease-in-out"
               >
                 <section class="pl-4">
                   <div
@@ -46,7 +49,7 @@
               </div>
             </section>
 
-            <div v-else class="mb-4">{{ child.title }}</div>
+            <div v-else class="mb-4 transition duration-200 ease-in hover:translate-x-[8px]">{{ child.title }}</div>
           </div>
 
           <div v-if="index === items.length - 1" class="flex gap-x-2">

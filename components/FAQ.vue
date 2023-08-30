@@ -13,8 +13,8 @@
           <span> {{ title }}</span>
           <iconify-icon
             icon="ph:plus-bold"
-            class="align-sub transition duration-200 ease-in-out"
-            :class="{ 'rotate-45': openedItemId === index }"
+            class="align-sub transition duration-300 ease-out"
+            :class="{ 'rotate-45': openedItemId === `faq-${index}` }"
           />
         </div>
 
