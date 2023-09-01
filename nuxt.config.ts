@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css', 'aos/dist/aos.css'],
+  css: ['~/assets/css/main.scss', 'aos/dist/aos.css'],
 
   modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge'],
 
