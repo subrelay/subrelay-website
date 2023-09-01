@@ -1,6 +1,8 @@
 <template>
   <div
     class="bg-[#131313] rounded-tl-[96px] rounded-tr-[96px] pt-24 pb-[120px] grid grid-cols-[repeat(12,64px)] justify-center gap-x-8 text-white"
+    data-aos="fade-up"
+    data-aos-duration="850"
   >
     <h2 class="mb-8 text-[64px] leading-tight col-start-3 col-end-[-3] text-center">Break the norm <br />of forms</h2>
 

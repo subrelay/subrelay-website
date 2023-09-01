@@ -58,3 +58,7 @@ body {
 a {
   cursor: pointer;
 }
+
+[data-aos='fade-up'] {
+  transform: translateY(50px);
+}

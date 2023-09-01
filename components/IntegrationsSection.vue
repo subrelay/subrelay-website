@@ -1,5 +1,9 @@
 <template>
-  <div class="mx-auto py-24 px-20 max-w-[1370px] grid grid-cols-12 gap-y-0 gap-x-8">
+  <div
+    class="mx-auto py-24 px-20 max-w-[1370px] grid grid-cols-12 gap-y-0 gap-x-8"
+    data-aos="fade-up"
+    data-aos-duration="850"
+  >
     <div class="flex flex-col items-start justify-center col-start-1 col-end-4">
       <div class="text-3xl leading-[127%]">Works with your existing workflow</div>
       <div class="font-medium underline mt-8">Browse 120+ integrations</div>

@@ -1,15 +1,14 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
-
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.scss', 'aos/dist/aos.css'],
 
   modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge'],
 
   router: {
-    // https://router.vuejs.org/api/interfaces/routeroptions.html
     options: {},
   },
+
+  plugins: [{ src: '~/plugins/aos', ssr: false }],
 
   postcss: {
     plugins: {
