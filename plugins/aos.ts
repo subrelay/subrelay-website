@@ -5,7 +5,7 @@ import AOS from 'aos';
 export default defineNuxtPlugin((app) => {
   if (typeof window !== 'undefined') {
     app.AOS = AOS.init({
-      once: false,
+      once: true,
     });
   }
 });

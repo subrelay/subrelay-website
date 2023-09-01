@@ -1,6 +1,6 @@
 7
 <template>
-  <div class="px-20 py-16 grid grid-cols-12 gap-8 max-w-[1370px] mx-auto">
+  <div class="px-20 py-24 grid grid-cols-12 gap-8 max-w-[1370px] mx-auto">
     <div class="col-span-7 flex items-center justify-center" data-aos="fade-up" data-aos-duration="850">
       <nuxt-img src="/placeholder.png" alt="" class="h-4/5 w-auto" />
     </div>
