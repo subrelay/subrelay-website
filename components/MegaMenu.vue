@@ -42,8 +42,11 @@
 
       <!-- megamenu-content-wrapper -->
       <div
-        class="absolute -top-1 bg-[#ffffffe6] transition-all duration-[600ms] ease-[cubic-bezier(0.165, 0.84, 0.44, 1)] backdrop-saturate-[1.8] backdrop-blur-[20px] w-full"
-        :class="{ 'pt-[89px]': scrolledPast88px, 'pt-px': !scrolledPast88px }"
+        data-aos="slide-down"
+        data-aos-duration="650"
+        data-aos-easing="ease-out-cubic"
+        v-if="scrolledPast88px"
+        class="absolute -top-1 pt-[89px] bg-[#ffffffe6] backdrop-saturate-[1.8] backdrop-blur-[20px] w-full"
       >
         <!-- <div class="min-h-[350px] px-[50px] pt-[30px] pb-[50px]">
           <div class="h-[88px]"></div>
@@ -165,6 +168,7 @@ const checkScroll = () => {
 };
 
 onMounted(() => {
+  checkScroll();
   window.addEventListener('scroll', checkScroll);
 });
 
