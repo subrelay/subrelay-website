@@ -1,7 +1,9 @@
 <template>
   <div class="relative">
     <footer class="border-t-0 bg-[#262627] text-white">
-      <div class="grid grid-rows-[280px_auto] grid-cols-[repeat(12,64px)] gap-y-16 gap-x-8 py-20 px-8 justify-center">
+      <div
+        class="grid md:grid-rows-[336px_auto] lg:grid-rows-[280px_auto] grid-cols-[repeat(4,64px)] md:grid-cols-[repeat(8,64px)] lg:grid-cols-[repeat(12,64px)] gap-y-16 gap-x-8 py-20 px-8 justify-center"
+      >
         <div
           class="row-span-full self-start first:col-[2_/_span_2] col-[span_2]"
           v-for="(item, index) in items"

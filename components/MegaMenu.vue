@@ -3,21 +3,21 @@
     <!-- Desktop nav -->
     <section class="h-[88px] relative">
       <!-- megamenu-top-menu -->
-      <div class="z-[100] flex relative items-center justify-between h-[88px] max-w-[1370px] mx-auto px-6">
+      <div class="z-[100] flex lg:flex-1 relative items-center justify-between h-[88px] max-w-[1370px] mx-auto px-6">
         <div class="flex">
           <a href="/" class="-m-1.5 p-1.5 text-xl text-bold">
             <span class="font-unbounded mr-1 p-2">Subrelay</span>
           </a>
         </div>
 
-        <div class="flex">
+        <div class="hidden lg:flex">
           <div v-for="(options, index) in navOptions" :key="index" class="flex items-center m-2 cursor-pointer">
             <span>{{ options }} </span>
             <ChevronDownIcon class="h-4 w-4 ml-2" />
           </div>
         </div>
 
-        <div class="flex">
+        <div class="hidden lg:flex lg:justify-end">
           <div class="mr-4 border rounded-lg px-4 py-2 border-solid border-zinc-700 cursor-pointer hover:opacity-80">
             Log in
           </div>
@@ -34,7 +34,6 @@
             class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
             @click="mobileMenuOpen = true"
           >
-            <span class="sr-only">Open main menu</span>
             <Bars3Icon class="h-6 w-6" aria-hidden="false" />
           </button>
         </div>
@@ -58,19 +57,15 @@
   <!-- Mobile -->
   <client-only>
     <Dialog as="div" class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
-      <div class="fixed inset-0 z-10" />
+      <div class="fixed inset-0 z-[1002]" />
       <DialogPanel
-        class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+        class="fixed inset-y-0 right-0 z-[1002] w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
       >
         <div class="flex items-center justify-between">
-          <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <nuxt-img
-              class="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
-            />
+          <a href="/" class="-m-1.5 p-1.5 text-xl text-bold">
+            <span class="font-unbounded">Subrelay</span>
           </a>
+
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
             <XMarkIcon class="h-6 w-6" aria-hidden="true" />
@@ -129,6 +124,7 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import {
   Dialog,
   DialogPanel,
@@ -149,8 +145,19 @@ import {
   SquaresPlusIcon,
   XMarkIcon,
 } from '@heroicons/vue/24/outline';
-
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/vue/20/solid';
+
+const products = [
+  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
+  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
+  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
+  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
+  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+];
+const callsToAction = [
+  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
+  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+];
 
 const mobileMenuOpen = ref(false);
 

@@ -20,8 +20,8 @@
     data-aos="fade-up"
     data-aos-duration="850"
   >
-    <h2 class="text-[64px]">Do it all with a form</h2>
-    <p class="leading-[133%] text-2xl font-normal">Whatever your goal, start with a ready-made template.</p>
+    <h2 class="text-4xl md:text-5xl xl:text-[64px] font-semibold">Do it all with a form</h2>
+    <p class="leading-[133%] xl:text-2xl font-normal">Whatever your goal, start with a ready-made template.</p>
   </div>
 
   <ProfilesSection />

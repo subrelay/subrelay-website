@@ -62,3 +62,48 @@ a {
 [data-aos='fade-up'] {
   transform: translateY(50px);
 }
+
+.with-media {
+  grid-template-areas:
+    'title title title title title title title title title title title title'
+    'media media media media media media media media media media media media'
+    'body body body body body body body body body body body body'
+    'cta cta cta cta cta cta cta cta cta cta cta cta';
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    text-align: left;
+    grid-template-areas:
+      'media media media media media media media . . . . .'
+      'media media media media media media media title title title title .'
+      'media media media media media media media body body body body .'
+      'media media media media media media media cta cta cta cta .'
+      'media media media media media media media . . . . .';
+
+    &.media-right {
+      grid-template-areas:
+        '. . . . . media media media media media media media'
+        'title title title title . media media media media media media media'
+        'body body body body . media media media media media media media'
+        'cta cta cta cta . media media media media media media media'
+        '. . . . . media media media media media media media';
+      text-align: left;
+    }
+  }
+
+  .media {
+    grid-area: media / media / media / media;
+  }
+
+  .title {
+    grid-area: title / title / title / title;
+  }
+
+  .body {
+    grid-area: body / body / body / body;
+  }
+
+  .cta {
+    grid-area: cta / cta / cta / cta;
+  }
+}
