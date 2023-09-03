@@ -16,7 +16,7 @@
         <li
           v-for="(integration, index) in integrations"
           :key="index"
-          class="w-60 h-60 lg:w-52 lg:h-52 p-8 flex items-center justify-center shrink-0 bg-[#F9F9F7] rounded-[52px]"
+          class="w-40 h-40 md:w-60 md:h-60 lg:w-52 lg:h-52 p-8 flex items-center justify-center shrink-0 bg-[#F9F9F7] rounded-[52px]"
         >
           <nuxt-img alt="" :src="`/integrations/${integration}-logo.svg`" class="w-full h-auto" />
         </li>
