@@ -1,7 +1,7 @@
 <template>
   <div class="relative bg-[#262627] text-white">
     <div class="mx-auto max-w-[1370px] text-left py-24 px-20">
-      <div class="mb-12 text-5xl font-semibold text-center">Frequently Asked Questions</div>
+      <div class="mb-12 text-3xl md:text-4xl xl:text-5xl font-semibold text-center">Frequently Asked Questions</div>
 
       <div
         class="border-t-2 py-4 cursor-pointer last:border-b-2"
@@ -9,7 +9,7 @@
         :key="index"
         @click="setOpening(`faq-${index}`)"
       >
-        <div class="text-2xl flex justify-between items-center">
+        <div class="text-base md:text-2xl flex justify-between items-center">
           <span> {{ title }}</span>
           <iconify-icon
             icon="ph:plus-bold"
@@ -19,7 +19,7 @@
         </div>
 
         <div :id="`faq-${index}`" class="h-0 overflow-hidden transition-[height] duration-300 ease-in-out">
-          <div class="py-6 w-4/5">{{ answer }}</div>
+          <div class="py-6 w-4/5 text-sm md:text-base">{{ answer }}</div>
         </div>
       </div>
     </div>
